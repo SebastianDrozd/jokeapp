@@ -9,9 +9,13 @@ import { JokeService } from './Services/joke.service';
 export class AppComponent {
   title = 'jokeapp';
   joke = null
+  mad = false;
   constructor(private jokeService : JokeService){}
 
   grabJoke(){
-    this.jokeService.getJoke().subscribe(data => this.joke = data)
+    this.jokeService.getJoke().subscribe(data => {this.joke = data;this.mad = false})
+  }
+  lamed(){
+    this.mad = true;
   }
 }

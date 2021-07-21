@@ -3,9 +3,10 @@
 <h2 class="text-center" style="color: #4cddf7;padding-top: 5em;padding-bottom: 2em;"><b>Welcome!</b></h2>
 <h5 class="text-center font-weight-light " >Would you like to hear a joke today?</h5>
 <button class="btn btn-outline-primary mx-auto d-block" style="color: #4cddf7 ; border-color:  #4cddf7 !important;margin-top: 4em;" (click)="grabJoke()">Yes please</button>
-<div *ngIf="joke" class="text-center" style="padding-top: 2em;">
+<div *ngIf="joke" class="text-center" style="padding-top: 3em;">
     <p>{{joke.setup}}</p>
     <p>{{joke.punchline}}</p>
-    <img src="../assets/laugh.png" alt="" height="100" width="100">
+    <br>
+    <img *ngIf = "!mad "src="../assets/laugh.png" alt="" height="100" width="100"><img *ngIf = "mad "src="../assets/mad.jpg" alt="" height="100" width="100"><button (click)="lamed()" style="margin-left: 2em;" class="btn btn-outline-danger">lame?</button> <button (click) = "grabJoke()"   style=" margin-left: 2em;color: #4cddf7 ; border-color:  #4cddf7 !important;"class="btn btn-outline-primary">Gimme Another!</button>
 </div>
 
