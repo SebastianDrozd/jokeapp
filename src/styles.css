@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+button:hover{
+    background-color: rgb(184, 250, 255) !important;
+}
+button:active{
+    border: 1px solid #4cddf7 !important;
+}

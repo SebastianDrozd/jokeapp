@@ -1,12 +1,25 @@
 <app-navigation></app-navigation>
+<div *ngIf="intro">
+    <h1 class="display-2 text-center"  style="color: #4cddf7;padding-top: 2em;padding-bottom: 1em;"><strong>Welcome!</strong></h1>
+    <h4 class="text-center font-weight-light " ><small class="text-muted">Would you like to hear a joke today? </small></h4>
+    <button class="btn btn-outline-primary mx-auto d-block" style="color: #4cddf7 ; border-color:  #4cddf7 !important;margin-top: 4em;" (click)="grabJoke()">Yes please</button>
+</div>
 
-<h2 class="text-center" style="color: #4cddf7;padding-top: 5em;padding-bottom: 2em;"><b>Welcome!</b></h2>
-<h5 class="text-center font-weight-light " >Would you like to hear a joke today?</h5>
-<button class="btn btn-outline-primary mx-auto d-block" style="color: #4cddf7 ; border-color:  #4cddf7 !important;margin-top: 4em;" (click)="grabJoke()">Yes please</button>
-<div *ngIf="joke" class="text-center" style="padding-top: 3em;">
-    <p>{{joke.setup}}</p>
-    <p>{{joke.punchline}}</p>
+<div *ngIf="joke" class="text-center" style="padding-top: 12em;">
+    <img *ngIf = "!mad "src="../assets/laugh.png" alt="" height="100" width="100"><img *ngIf = "mad "src="../assets/mad.jpg" alt="" height="100" width="100">
+   <br>
+   <br>
+   <br>
+   <div *ngIf="!mad">
+    <h4><small class="text-muted"> {{joke.setup}}</small></h4>
+    <h4><small class="text-muted"> {{joke.punchline}}</small></h4>
+    </div>
+    <div *ngIf="mad">
+        <h4><small class="text-muted">Oh like you can do better? </small></h4>
+    </div>
     <br>
-    <img *ngIf = "!mad "src="../assets/laugh.png" alt="" height="100" width="100"><img *ngIf = "mad "src="../assets/mad.jpg" alt="" height="100" width="100"><button (click)="lamed()" style="margin-left: 2em;" class="btn btn-outline-danger">lame?</button> <button (click) = "grabJoke()"   style=" margin-left: 2em;color: #4cddf7 ; border-color:  #4cddf7 !important;"class="btn btn-outline-primary">Gimme Another!</button>
+    <br>
+    <br>
+    <button (click)="lamed()" style="margin-left: 2em;" class="btn btn-outline-danger">lame?</button> <button (click) = "grabJoke()"   style=" margin-left: 2em;color: #4cddf7 ; border-color:  #4cddf7 !important;"class="btn btn-outline-primary">Gimme Another!</button>
 </div>
 
